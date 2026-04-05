@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: #0f0f13;
+    color: #f1f5f9;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0f0f13; }
+  ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+}
+
+@layer components {
+  .spinner {
+    @apply inline-block w-4 h-4 rounded-full border-2 border-white/20 animate-spin;
+    border-top-color: white;
+  }
+  .spinner-lg {
+    @apply inline-block w-10 h-10 rounded-full border-[3px] border-white/20 animate-spin;
+    border-top-color: white;
+  }
+}
