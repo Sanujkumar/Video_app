@@ -1,6 +1,10 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 
+
+const API = import.meta.env.VITE_API_URL;
+axios.defaults.baseURL = API;
+
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
