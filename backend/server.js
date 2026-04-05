@@ -26,7 +26,7 @@ app.set('io', io);
 
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   credentials: true
 }));
 app.use(express.json());
@@ -59,7 +59,7 @@ io.on('connection', (socket) => {
 });
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/videosensitivity')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('✅ MongoDB connected successfully');
     const PORT = process.env.PORT || 5000;
